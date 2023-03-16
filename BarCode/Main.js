@@ -1,7 +1,14 @@
-	let SHEET_ID = '1RY6MBIJv6Vw6r4167p2-Jc7l-izYZAScMb_HONDiyxw'
-	let SHEET_TITLE = 'BarCode'
-	let SHEET_RANGE = 'A:B'
-		let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&range=' + SHEET_RANGE);
+	const SHEET_ID = '1RY6MBIJv6Vw6r4167p2-Jc7l-izYZAScMb_HONDiyxw';
+	const SHEET_TITLE = 'BarCode';
+	const SHEET_RANGE = 'A:B';
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	let QUE_CODE = urlParams.get('barCode')
+	console.log(QUE_CODE);
+	let QUE = 'Select * HWERE A = ' + QUE_CODE + '';
+	const query = encodeURIComponent(QUE);
+	const FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&tq=' + query );
+	console.log(FULL_URL);
 	fetch(FULL_URL)
 	.then(res => res.text())
 	.then(rep => {
