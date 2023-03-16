@@ -5,7 +5,7 @@
 	const urlParams = new URLSearchParams(queryString);
 	let QUE_CODE = urlParams.get('barCode')
 	console.log(QUE_CODE);
-	let QUE = 'Select * WHERE A = ' + QUE_CODE + '';
+	let QUE = 'Select * WHERE A = "' + QUE_CODE + '"';
 	const query = encodeURIComponent(QUE);
 	const FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&tq=' + query );
 	console.log(FULL_URL);
