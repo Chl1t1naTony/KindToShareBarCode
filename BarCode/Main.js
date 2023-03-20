@@ -15,11 +15,11 @@
     let data = JSON.parse(rep.substr(47).slice(0,-2));
     console.log(data.table.rows.length);
 	if(data.table.rows.length > 0){
-		$('.FailDiv').hide();
-		$('.SuccessDiv').show();
+		$('#FailDiv').hide();
+		$('#SuccessDiv').show();
 	}else{
-		$('.SuccessDiv').hide();
-		$('.FailDiv').show();
+		$('#SuccessDiv').hide();
+		$('#FailDiv').show();
 	}
  
 })
