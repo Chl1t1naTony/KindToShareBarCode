@@ -13,6 +13,11 @@
 	.then(res => res.text())
 	.then(rep => {
     let data = JSON.parse(rep.substr(47).slice(0,-2));
-    console.log(data)
+    console.log(data.table.rows.length);
+	if(data.table.rows.length > 0){
+		alert("此條碼商品為康碩正版授權商品")
+	}else{
+		alert("此條碼商品為有疑慮")
+	}
  
 })
