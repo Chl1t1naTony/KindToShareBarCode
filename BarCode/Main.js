@@ -1,3 +1,6 @@
+
+	$('#FailDiv').hide();
+	$('#SuccessDiv').hide();
 	const SHEET_ID = '1RY6MBIJv6Vw6r4167p2-Jc7l-izYZAScMb_HONDiyxw';
 	const SHEET_TITLE = 'BarCode';
 	const SHEET_RANGE = 'A:B';
