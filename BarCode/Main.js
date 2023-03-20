@@ -1,6 +1,8 @@
 
-	$('#FailDiv').hide();
-	$('#SuccessDiv').hide();
+	var FailElement = document.getElementById("FailDiv");
+	var SuccessElement = document.getElementById("SuccessDiv");
+		SuccessElement.style.display = "none";
+		FailElement.style.display = "none";
 	const SHEET_ID = '1RY6MBIJv6Vw6r4167p2-Jc7l-izYZAScMb_HONDiyxw';
 	const SHEET_TITLE = 'BarCode';
 	const SHEET_RANGE = 'A:B';
@@ -18,11 +20,11 @@
     let data = JSON.parse(rep.substr(47).slice(0,-2));
     console.log(data.table.rows.length);
 	if(data.table.rows.length > 0){
-		$('#FailDiv').hide();
-		$('#SuccessDiv').show();
+		FailElement.style.display = "none";
+		SuccessElement.style.display = "block";
 	}else{
-		$('#SuccessDiv').hide();
-		$('#FailDiv').show();
+		SuccessElement.style.display = "none";
+		FailElement.style.display = "block";
 	}
  
 })
