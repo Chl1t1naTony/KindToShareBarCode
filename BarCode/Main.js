@@ -1,13 +1,15 @@
 
 	var FailElement = document.getElementById("FailDiv");
 	var SuccessElement = document.getElementById("SuccessDiv");
-
+	var CodeElement = document.getElementById("CodeDiv");
+	
 	const SHEET_ID = '1RY6MBIJv6Vw6r4167p2-Jc7l-izYZAScMb_HONDiyxw';
 	const SHEET_TITLE = 'BarCode';
 	const SHEET_RANGE = 'A:B';
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
-	let QUE_CODE = urlParams.get('barCode')
+	let QUE_CODE = urlParams.get('barCode');
+	CodeElement.innerHTML = '產品驗證碼:' + QUE_CODE
 	console.log(QUE_CODE);
 	let QUE = 'Select * WHERE A = "' + QUE_CODE + '"';
 	const query = encodeURIComponent(QUE);
@@ -21,9 +23,11 @@
 	if(data.table.rows.length > 0){
 		FailElement.style.display = "none";
 		SuccessElement.style.display = "block";
+		CodeElement.style.display = "block";
 	}else{
 		SuccessElement.style.display = "none";
 		FailElement.style.display = "block";
+		CodeElement.style.display = "none";
 	}
  
 })
