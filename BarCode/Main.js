@@ -9,7 +9,7 @@
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 	let QUE_CODE = urlParams.get('barCode');
-	CodeElement.innerHTML = '產品驗證碼:' + QUE_CODE
+	CodeElement.innerHTML = '產品驗證碼: <br> ' + QUE_CODE
 	console.log(QUE_CODE);
 	let QUE = 'Select * WHERE A = "' + QUE_CODE + '"';
 	const query = encodeURIComponent(QUE);
